@@ -3,6 +3,7 @@ import './FeaturedMovie.css';
 
 export default ({ item }) => {
   let first_date = new Date(item.first_air_date);
+  let description = item.overview.length > 200 ? item.overview.substr(0, 200) + '...' : item.overview;
   return (
     <section className="featured" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})` }}>
       <div className="featured--vertical">
@@ -13,7 +14,7 @@ export default ({ item }) => {
             <div className="featured--year">{first_date.getFullYear()}</div>
             <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons !== 1 ? 's' : ''}</div>
           </div>
-          <div className="featured--description">{item.overview}</div>
+          <div className="featured--description">{description}</div>
           <div className="featured--buttons">
             <a className="featured--watchbutton" href={`/watch/${item.id}`}>► Assistir</a>
             <a className="featured--listbutton" href={`/list/add/${item.id}`}>+ Minha Lista</a>

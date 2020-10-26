@@ -84,3 +84,25 @@
   font-size: 18px;
   color: #999;
 }
+
+@media(max-width: 720px) {
+  .featured--name {
+    font-size: 30px;
+  }
+  .featured--description {
+    max-width: 100%;
+    font-size: 18px;
+  }
+  .featured--watchbutton,.featured--listbutton {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 18px;
+  }
+  .featured--horizontal {
+    padding-top: 20px;
+  }
+  .featured--genres {
+    font-size: 14px;
+  }
+}
